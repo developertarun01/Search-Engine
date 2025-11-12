@@ -404,7 +404,7 @@ i {
 
   .custom-line {
     display: block;
-    height: 5px;
+    height: 6px;
     background-color: var(--background);
   }
 
