@@ -54,87 +54,86 @@ fetch("./assets/data/sponseredWebsiteData.json")
     .then((data) => {
         sponseredWebsite = data;
 
-        renderSponceredCard(sponseredWebsite.slice(0, 2));
+        renderSponceredCard(sponseredWebsite.slice(0, 4));
     })
     .catch((err) => console.error("Error loading data:", err));
 
 // Function to render cards
 function renderSponceredCard(data) {
-    sec2SponceredCard.innerHTML = "";
+  sec2SponceredCard.innerHTML = "";
 
-    data.forEach((item) => {
-        sec2SponceredCard.innerHTML += `
-      <div>
-        <div class="sec2-up flex-center">
-          <div class="sec2-up-logo">
-            <img src="${item.logo}" alt="Company Logo">
-          </div>
+  data.forEach((item) => {
+    // Randomly pick between 0 or 1
+    const randomFormat = Math.random() < 0.5 ? 0 : 1;
 
-          <div class="sec2-up-content">
-            <div class="sec2-up-name">
-              <p><b>${item.name}</b></p>
+    if (randomFormat === 0) {
+      // First format
+      sec2SponceredCard.innerHTML += `
+        <div>
+          <div class="sec2-up flex-center">
+            <div class="sec2-up-logo">
+              <img src="${item.logo}" alt="Company Logo">
             </div>
-            <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
-              <div class="sec2-up-url">${item.url}</div> 
-              <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="sec2-center">
-          <h3 class="mt-10">
-            <a href="${item.url}" target="_blank"><span>${item.name}</span></a>
-          </h3>
-          <p class="mt-10">${item.desc}</p>
-        </div>
-
-        <div class="sec2-right ml-10">
-          <hr>
-          <p>Call us Now: <a href="tel:${item.numCall}"><span>${item.numDisplay}</span></a></p>
-          <hr>
-        </div>
-      </div>
-    `;
-    });
-
-    data.forEach((item) => {
-        sec2SponceredCard.innerHTML += `
-      <div class="mb-10">
-        <div class="sec2-up flex-center">
-          <div class="sec2-up-logo">
-            <img src="${item.logo}" alt="Company Logo">
-          </div>
-
-          <div class="sec2-up-content">
-            <div class="sec2-up-name">
-              <p><b>${item.name}</b></p>
+            <div class="sec2-up-content">
+              <div class="sec2-up-name">
+                <p><b>${item.name}</b></p>
+              </div>
+              <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
+                <div class="sec2-up-url">${item.url}</div> 
+                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+              </a>
             </div>
-            <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
-              <div class="sec2-up-url">${item.url}</div> 
-              <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
-            </a>
+          </div>
+          <div class="sec2-center">
+            <h3 class="mt-10">
+              <a href="${item.url}" target="_blank"><span>${item.name}</span></a>
+            </h3>
+            <p class="mt-10">${item.desc}</p>
+          </div>
+          <div class="sec2-right ml-10">
+            <hr>
+            <p>Call us Now: <a href="tel:${item.numCall}"><span>${item.numDisplay}</span></a></p>
+            <hr>
           </div>
         </div>
-
-        <div class="sec2-center">
-          <h3 class="mt-10">
-            <a href="${item.url}" target="_blank"><span>${item.name}</span></a>
-          </h3>
-          <p class="mt-10">${item.desc}</p>
+      `;
+    } else {
+      // Second format
+      sec2SponceredCard.innerHTML += `
+        <div class="mb-10">
+          <div class="sec2-up flex-center">
+            <div class="sec2-up-logo">
+              <img src="${item.logo}" alt="Company Logo">
+            </div>
+            <div class="sec2-up-content">
+              <div class="sec2-up-name">
+                <p><b>${item.name}</b></p>
+              </div>
+              <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
+                <div class="sec2-up-url">${item.url}</div> 
+                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+              </a>
+            </div>
+          </div>
+          <div class="sec2-center">
+            <h3 class="mt-10">
+              <a href="${item.url}" target="_blank"><span>${item.name}</span></a>
+            </h3>
+            <p class="mt-10">${item.desc}</p>
+          </div>
+          <div class="sec2-right-diff mt-10 flex-center">
+            <div class="sec2-right-diff-left">
+              <span><i class="fa-solid fa-phone"></i></span>
+            </div>
+            <div class="sec2-right-diff-right">
+              <p><a href="tel:${item.numCall}"><span><b>${item.numDisplay}</b></span></a></p>
+              <p class="small"><a href="${item.url}">${item.url}</a></p>
+            </div>
+          </div>
         </div>
-
-        <div class="sec2-right-diff mt-10 flex-center">
-                        <div class="sec2-right-diff-left">
-                            <span><i class="fa-solid fa-phone"></i></span>
-                        </div>
-                        <div class="sec2-right-diff-right">
-                            <p><a href="tel:${item.numCall}"><span><b>${item.numDisplay}</b></span></a></p>
-                            <p class="small"><a href="${item.url}">${item.url}</a></p>
-                        </div>
-                    </div>
-      </div>
-    `;
-    });
+      `;
+    }
+  });
 }
 
 // Show Hide Sponsered 
