@@ -1,9 +1,9 @@
 :root {
   --primary: #053b5e;
   --background: #e6e6e6;
-  --button-light: rgb(37, 37, 255);
-  --button: rgb(37, 37, 255);
-  --button-dark: rgb(37, 37, 255);
+  --button-light: #1a73e8;
+  --button: #1a73e8;
+  --button-dark: #1a73e8;
   --light: #f0f0f0;
   --dark: #303030;
 }
@@ -18,7 +18,7 @@ h1,
 h2,
 h3,
 summary {
-  font-family: "Playfair Display", serif;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -43,7 +43,7 @@ li,
 label,
 input,
 textarea {
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   list-style: none;
 }
 
@@ -59,9 +59,13 @@ textarea {
 }
 
 body {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
-  color: var(--dark);
+  line-height: 1.5; /* 150% of font size for readability */
+  color: #202124; /* Google's default text color */
   background-color: var(--background);
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -319,6 +323,10 @@ i {
   padding: 20px;
 }
 
+.results-for {
+  display: none;
+}
+
 /* Section 2  */
 .sec2 {
   background-color: white;
@@ -326,7 +334,7 @@ i {
 
 .sec2-up-logo {
   background-color: var(--background);
-  padding: 10px 10px 7px 10px;
+  padding: 8px 8px 4px 8px;
   border-radius: 50%;
   width: 40px;
 }

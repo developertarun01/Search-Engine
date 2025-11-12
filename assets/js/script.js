@@ -10,7 +10,8 @@ const allData = [];
 // Search functionality
 searchInput.addEventListener("keyup", () => {
     const query = searchInput.value.toLowerCase();
-    resultsFor.innerHTML = query;
+    resultsFor.style.display = "block"
+    resultsFor.innerHTML = `Result for <span>${query}</span>`;
     navCenterCross.style.display = "block";
 
     const filteredSponsered = sponseredWebsite.filter(
@@ -26,6 +27,7 @@ searchInput.addEventListener("keyup", () => {
 
 navCenterCross.addEventListener("click", () => {
     searchInput.value = "";
+    resultsFor.style.display = "none"
     renderSponceredCard(sponseredWebsite.slice(0, 2)); // reset to first two again
 });
 
@@ -88,8 +90,6 @@ function renderSponceredCard(data) {
         <div class="sec2-right ml-10">
           <hr>
           <p>Call us Now: <a href="tel:${item.numCall}"><span>${item.numDisplay}</span></a></p>
-          <hr>
-          <p>For any Query: <a href="mailto:${item.mail}"><span>${item.mail}</span></a></p>
           <hr>
         </div>
       </div>
