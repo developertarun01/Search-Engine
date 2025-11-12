@@ -69,6 +69,7 @@ function renderSponceredCard(data) {
     if (randomFormat === 0) {
       // First format
       sec2SponceredCard.innerHTML += `
+      <hr class="custom-line">
         <div>
           <div class="sec2-up flex-center">
             <div class="sec2-up-logo">
@@ -100,6 +101,7 @@ function renderSponceredCard(data) {
     } else {
       // Second format
       sec2SponceredCard.innerHTML += `
+      <hr class="custom-line">
         <div class="mb-10">
           <div class="sec2-up flex-center">
             <div class="sec2-up-logo">
@@ -167,6 +169,7 @@ function renderMainCards(data) {
 
     data.forEach((item) => {
         sec2MainCard.innerHTML += `
+        <hr class="custom-line">
         <div class="flex mt-10">
         <div class="main-card-left">
                         <div class="sec2-up flex-center">
@@ -225,7 +228,8 @@ function renderNormalData(data) {
 
     data.forEach((item) => {
         sec2NormalCard.innerHTML += `
-        <div class="mt-20">
+        <hr class="custom-line">
+        <div class="mt-10">
 <div class="sec2-up flex-center">
                         <div class="sec2-up-logo">
                             <img src="${item.logo}" alt="Company Logo">

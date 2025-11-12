@@ -4,7 +4,7 @@
   --button-light: #1a73e8;
   --button: #1a73e8;
   --button-dark: #1a73e8;
-  --light: #c7c7c7;
+  --light: #e2e2e2;
   --dark: #303030;
 }
 
@@ -358,7 +358,6 @@ i {
   padding: 10px 20px;
 }
 
-
 .sec2-show-hide-container {
   width: 100%;
 }
@@ -385,6 +384,10 @@ i {
   justify-content: space-between;
 }
 
+.custom-line {
+  display: none;
+}
+
 /* Mobile and Tablets (1024px) */
 @media (max-width: 900px) {
   body {
@@ -393,6 +396,16 @@ i {
 
   summary {
     font-size: 14px;
+  }
+
+  .flex-col {
+    gap: 10px;
+  }
+
+  .custom-line {
+    display: block;
+    height: 5px;
+    background-color: var(--background);
   }
 
   .container {
@@ -498,7 +511,7 @@ i {
   .sec2 {
     margin-top: 5px;
   }
-  
+
   .sec2-right-diff {
     flex-direction: row;
   }
