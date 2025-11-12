@@ -247,8 +247,8 @@ function renderNormalData(data) {
                     </div>
 
                     <div class="sec2-center">
-                        <h3 class="mt-10"><a href="${item.url}"
-                                target="_blank"><span>${item.name}</span></a></h3>
+                        <h2 class="mt-10"><a href="${item.url}"
+                                target="_blank"><span>${item.name}</span></a></h2>
                         <p class="mt-10">${item.desc}</p>
                     </div>
         </div>`
