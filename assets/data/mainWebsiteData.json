@@ -1,0 +1,47 @@
+[
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "Expedia",
+        "url": "https://www.callfare.com/expedia",
+        "desc": "Call Expedia | 24/7 Customer Support | Call Now. Easy flight ticket booking, Flight ticket changes, Flight ticket cancellation over the call. Call Now.",
+        "card1": "Flight from Delhi",
+        "card2": "Flight from Bangalore",
+        "image": "./assets/images/plane1.jpg"
+    },
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "AirAsia",
+        "url": "https://www.callfare.com/airasia",
+        "desc": "Call AirAsia | Customer Support | Book, change, or cancel flights instantly over the phone. Call Now.",
+        "card1": "Flight from Mumbai",
+        "card2": "Flight from Chennai",
+        "image": "./assets/images/plane2.jpg"
+    },
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "MakeMyTrip",
+        "url": "https://www.callfare.com/makemytrip",
+        "desc": "Call MakeMyTrip | 24/7 Support | Hassle-free flight bookings, cancellations, and changes via call.",
+        "card1": "Flight from Hyderabad",
+        "card2": "Flight from Kolkata",
+        "image": "./assets/images/plane3.jpg"
+    },
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "Cleartrip",
+        "url": "https://www.callfare.com/cleartrip",
+        "desc": "Call Cleartrip | Easy flight booking, ticket changes, and cancellation support available over call.",
+        "card1": "Flight from Pune",
+        "card2": "Flight from Jaipur",
+        "image": "./assets/images/plane4.jpg"
+    },
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "Traveloka",
+        "url": "https://www.callfare.com/traveloka",
+        "desc": "Call Traveloka | Customer support for flight bookings, changes, and cancellations over phone. Call Now.",
+        "card1": "Flight from Surat",
+        "card2": "Flight from Kochi",
+        "image": "./assets/images/plane5.jpg"
+    }
+]

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document - Home</title>
+    <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Google Font (For Font Family) -->
@@ -28,22 +28,40 @@
         <i class="fa-solid fa-xmark fa-3xl"></i>
     </div> -->
     <nav class="nav ">
-        <div class="flex nav-inner flex-center-center">
+        <div class="nav-inner flex-center-center">
             <div class="nav-left flex-center-center">
                 <div class="nav-left-up">
                     <i class="fa-solid fa-bars fa-xl"></i>
                 </div>
                 <div class="nav-center flex-center-center">
-                    <i class="fa-solid fa-magnifying-glass fa-xl"></i>
                     <div class="search-bar">
                         <input type="text" placeholder="Type here" name="search" id="search">
                     </div>
-                    <!-- <i class="fa-solid fa-xmark fa-xl"></i> -->
+                    <div class="nav-center-cross">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="nav-center-mic">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                    <div class="nav-center-camerea">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <div class="nav-center-search">
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="nav-right">
-                <i class="fa-solid fa-user fa-xl"></i>
+            <div class="nav-right flex-center">
+                <div class="nav-right-flask">
+                    <i class="fa-solid fa-flask fa-xl"></i>
+                </div>
+                <div class="nav-right-cube">
+                    <i class="fa-solid fa-grip-vertical"></i>
+                </div>
+                <img src="./assets/images/user.png" alt="User Logo">
             </div>
         </div>
     </nav>
@@ -68,8 +86,191 @@
     <hr class="no-class">
 
     <section class="sec2">
-        <div class="sec2-inner container flex-col">
+        <div class="sec2-inner container flex">
 
+            <div class="sec2-inner-left flex-col flex-2">
+                <div class="sec2-inner-heading">
+                    <p>Results for <span class="results-for"></span></p>
+                    <h2>Sponsored results</h2>
+                    <hr>
+                </div>
+
+                <div class="sec2-sponcered-card flex-col">
+
+                    <!-- <div class="sec2-up flex-center">
+                        <div class="sec2-up-logo">
+                            <img src="./assets/images/globe.png" alt="Company Logo">
+                        </div>
+
+                        <div class="sec2-up-content">
+                            <div class="sec2-up-name">
+                                <p><b>Expedia</b></p>
+                            </div>
+                            <a href="https://www.callfare.com/expedia" target="_blank">
+                                <div class="sec2-up-url">https://www.callfare.com/expedia</div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="sec2-center">
+                        <h3 class="mt-10"><a href="https://www.callfare.com/expedia"
+                                target="_blank"><span>Expedia</span></a></h3>
+                        <p class="mt-10">Call Expedia | 24/7 Customer Support | Call Now. Easy flight ticket booking,
+                            Flight
+                            ticket changes, Flight ticket cancellation over the call. Call Now.</p>
+                    </div>
+
+                    <div class="sec2-right ml-10">
+                        <hr>
+                        <p> Call us Now: <a href="tel:8772901852"><span>(877) 290-1852</span></a></p>
+                        <hr>
+                        <p> For any Query: <a href="mailto:contact@xyz.com"><span>contact@xyz.com</span></a></p>
+                        <hr>
+                    </div> -->
+                </div>
+
+                <div class="sec2-show-hide-container flex-center-center">
+
+                    <div class="sec2-show-hide">
+                        <p>Hide Sponsored results &#9650;</p>
+                    </div>
+                </div>
+
+                <div class="sec2-main-card flex-col">
+                    <!-- <div class="main-card-left">
+                        <div class="sec2-up flex-center">
+                            <div class="sec2-up-logo">
+                                <img src="./assets/images/globe.png" alt="Company Logo">
+                            </div>
+
+                            <div class="sec2-up-content">
+                                <div class="sec2-up-name">
+                                    <p><b>Expedia</b></p>
+                                </div>
+                                <a href="https://www.callfare.com/expedia" target="_blank">
+                                    <div class="sec2-up-url">https://www.callfare.com/expedia</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="sec2-center">
+                            <h3 class="mt-10"><a href="https://www.callfare.com/expedia"
+                                    target="_blank"><span>Expedia</span></a></h3>
+                            <p class="mt-10">Call Expedia | 24/7 Customer Support | Call Now. Easy flight ticket
+                                booking,
+                                Flight
+                                ticket changes, Flight ticket cancellation over the call. Call Now.</p>
+                        </div>
+
+                        <div class="sec2-right ml-10 flex mt-10">
+                            <div class="sec2-right-card ">
+                                <p><a href="url"><span>Flight from Delhi</span></a></p>
+                            </div>
+                            <div class="sec2-right-card">
+                                <p><a href="url"><span>Flight from Mumbai</span></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-card-right">
+                        <img src="./assets/images/plane1.jpg" alt="Plane Image">
+                    </div> -->
+                </div>
+
+                <div class="sec2-faqs">
+                    <hr>
+                    <h2>People also ask</h2>
+                    <details class="mt-20">
+                        <summary>How do I book a flight on Expedia?</summary>
+                        <p class="mt-10"><b>AI Overview</b><br>Booking a flight on Expedia is simple and convenient.
+                            Start by entering your departure city, destination, travel dates, and number of passengers
+                            in the search tool. Expedia will display a list of available flights, including different
+                            airlines, timings, and prices. You can filter results by stops, duration, or price to find
+                            the option that best suits your needs. Once you select a flight, follow the on-screen
+                            instructions to provide passenger details and complete payment securely. You will receive an
+                            email confirmation with your itinerary. <span class="small today-date">7 Oct 2025</span></p>
+                    </details>
+                    <hr>
+                    <details class="mt-20">
+                        <summary>Can I cancel or change my Expedia flight booking?</summary>
+                        <p class="mt-10"><b>AI Overview</b><br>Yes, most flights booked through Expedia can be changed
+                            or canceled, but the options depend on the airline’s policies and the type of fare
+                            purchased. Some tickets allow free modifications, while others may have fees or
+                            restrictions. To make a change, log in to your Expedia account, go to “My Trips,” and select
+                            your flight. Expedia provides clear instructions for managing bookings, and you can also
+                            contact their customer service for assistance. Always review the airline’s cancellation or
+                            change policy before booking to avoid unexpected charges. <span class="small today-date">7
+                                Oct 2025</span></p>
+                    </details>
+                    <hr>
+                    <details class="mt-20">
+                        <summary>Does Expedia offer refunds for canceled flights?</summary>
+                        <p class="mt-10"><b>AI Overview</b><br>Refund eligibility depends primarily on the airline’s
+                            rules and the fare conditions of your ticket. Expedia clearly indicates whether a flight is
+                            refundable during the booking process. If your ticket qualifies for a refund, you can
+                            initiate the process via your Expedia account or contact their support team. Non-refundable
+                            tickets may allow partial refunds in certain situations, or you might receive a credit
+                            voucher for future travel. It is important to check your airline’s specific policy,
+                            especially for cancellations due to unforeseen events. <span class="small today-date">7 Oct
+                                2025</span></p>
+                    </details>
+                    <hr>
+                    <details class="mt-20">
+                        <summary>How can I find the cheapest flights on Expedia?</summary>
+                        <p class="mt-10"><b>AI Overview</b><br>Finding the lowest fares on Expedia requires a mix of
+                            flexibility and planning. Try using flexible travel dates to see if shifting your departure
+                            or return by a day or two reduces the price. Set price alerts for your preferred route to
+                            get notifications when fares drop. You can also compare different airlines, check
+                            alternative airports nearby, and consider booking round-trip or connecting flights to save
+                            money. Expedia’s filters and sorting options make it easy to identify budget-friendly
+                            flights without sacrificing convenience or travel times. <span class="small today-date">7
+                                Oct
+                                2025</span></p>
+                    </details>
+                    <hr>
+                    <details class="mt-20">
+                        <summary>Can I book flights and hotels together on Expedia?</summary>
+                        <p class="mt-10"><b>AI Overview</b><br>Yes, Expedia makes it easy to book flights and hotels
+                            together in one seamless transaction. Bundling your travel arrangements often offers
+                            discounts compared to booking separately, helping you save money. Simply use the “Flight +
+                            Hotel” search option, enter your travel details, and choose your preferred flight and
+                            accommodation. Expedia provides package options with different price ranges, hotel ratings,
+                            and locations. After booking, you receive a single confirmation for your entire trip,
+                            simplifying travel planning and reducing the risk of missing details. <span
+                                class="small today-date">7 Oct 2025</span></p>
+                    </details>
+                    <hr>
+                </div>
+
+                <div class="sec2-normal-card flex-col">
+                    <!-- <div class="sec2-up flex-center">
+                        <div class="sec2-up-logo">
+                            <img src="./assets/images/globe.png" alt="Company Logo">
+                        </div>
+
+                        <div class="sec2-up-content">
+                            <div class="sec2-up-name">
+                                <p><b>Expedia</b></p>
+                            </div>
+                            <a href="https://www.callfare.com/expedia" target="_blank">
+                                <div class="sec2-up-url">https://www.callfare.com/expedia</div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="sec2-center">
+                        <h3 class="mt-10"><a href="https://www.callfare.com/expedia"
+                                target="_blank"><span>Expedia</span></a></h3>
+                        <p class="mt-10">Call Expedia | 24/7 Customer Support | Call Now. Easy flight ticket booking,
+                            Flight
+                            ticket changes, Flight ticket cancellation over the call. Call Now.</p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="sec2-inner-right flex-1">
+            </div>
         </div>
     </section>
 
@@ -80,7 +281,7 @@
             </div>
             <div class="footer-center mt-10">
                 <p>India | <i class="fa-solid fa-circle-dot fa-beat"></i> <span id="address"></span> - From your
-                        Device -
+                    Device -
                     <span>Update Location</span>
                 </p>
             </div>

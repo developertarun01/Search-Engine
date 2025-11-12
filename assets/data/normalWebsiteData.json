@@ -1,0 +1,32 @@
+[
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "Expedia",
+        "url": "https://www.callfare.com/expedia",
+        "desc": "Call Expedia | 24/7 Customer Support | Call Now. Easy flight ticket booking, Flight ticket changes, Flight ticket cancellation over the call. Call Now."
+    },
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "AirAsia",
+        "url": "https://www.callfare.com/airasia",
+        "desc": "Call AirAsia | Customer Support | Book, change, or cancel flights instantly over the phone. Call Now."
+    },
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "MakeMyTrip",
+        "url": "https://www.callfare.com/makemytrip",
+        "desc": "Call MakeMyTrip | 24/7 Support | Hassle-free flight bookings, cancellations, and changes via call."
+    },
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "Cleartrip",
+        "url": "https://www.callfare.com/cleartrip",
+        "desc": "Call Cleartrip | Easy flight booking, ticket changes, and cancellation support available over call."
+    },
+    {
+        "logo": "./assets/images/globe.png",
+        "name": "Traveloka",
+        "url": "https://www.callfare.com/traveloka",
+        "desc": "Call Traveloka | Customer support for flight bookings, changes, and cancellations over phone. Call Now."
+    }
+]

@@ -1,184 +1,233 @@
-// Website Details
-const website = [
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Call Expedia | 24/7 Customer Support | Call Now. Easy flight ticket booking, Flight ticket changes, Flight ticket cancellation over the call. Call Now.",
-        numberDisplay: "(877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Expedia | Flight Booking Desk | Call Now. Book your flight, Ticket changes, Ticket cancellation over the call.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Call Expedia | 24/7 Customer Support | Call Now. Easy flight ticket booking, Flight ticket changes, Flight ticket cancellation over the call.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Expedia Travel | 24/7 Reservation Support | Wave Service Charge. Expedia Airlines Flight Reservations Over The Call.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Call 1800 Expedia | Customer Support Number | Flight tickets on call. Flight ticket booking, changes, and cancellation over the call.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "1800 Expedia | Book Expedia Flight | Book flights on call. Expedia Airlines Flight Manage Booking Over The Call.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Call Expedia | Call To Book Flight | 24/7 Flight Booking Support. Expedia Airlines Flight Ticket Cancellations and Rebooking Over The Call.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Expedia Phone Number | Booking, Changes, Cancellation | Call Us Now. Explore destinations, compare prices, and book flights, hotels, or packages on Expedia.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Call Expedia | Book Your Flight Ticket | Call to Book Flight. Look for exclusive offers, discounts and promo codes on Expedia for your next trip.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Expedia Group Booking | Flight Booking Online | Call to Book Flight. Personalized recommendations, exclusive discounts, and 24/7 support.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Expedia | Travel Made Easy | Book Now. New flight booking, ticket changes, and ticket cancellations over the call.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    },
-    {
-        image: "./assets/images/globe.png",
-        name: "Expedia",
-        url: "https://www.callfare.com/expedia",
-        description: "Call Expedia | Book with Confidence | Call us to book your flight. Book your flight, manage ticket changes, and cancellations easily.",
-        numberDisplay: "+1 (877) 290-1852",
-        numberCall: "8772901852"
-    }
-];
-
 // DOM elements
-const sec2Container = document.querySelector(".sec2-inner");
+const sec2SponceredCard = document.querySelector(".sec2-sponcered-card");
 const searchInput = document.querySelector("#search");
+const navCenterCross = document.querySelector(".nav-center-cross");
+const address = document.getElementById("address");
+const resultsFor = document.querySelector('.results-for');
+
+// Navbar 
+const allData = [];
+// Search functionality
+searchInput.addEventListener("keyup", () => {
+    const query = searchInput.value.toLowerCase();
+    resultsFor.innerHTML = query;
+    navCenterCross.style.display = "block";
+
+    const filteredSponsered = sponseredWebsite.filter(
+        (item) =>
+            item.name.toLowerCase().includes(query) ||
+            item.url.toLowerCase().includes(query) ||
+            item.desc.toLowerCase().includes(query)
+    );
+
+    // When searching, show only the first two matches
+    renderSponceredCard(filteredSponsered.slice(0, 2));
+});
+
+navCenterCross.addEventListener("click", () => {
+    searchInput.value = "";
+    renderSponceredCard(sponseredWebsite.slice(0, 2)); // reset to first two again
+});
+
+// Section 2 
+let todayDate = document.querySelectorAll(".today-date");
+
+let currentDate = new Date();
+let formattedDate = currentDate.toLocaleDateString("en-US", {
+    day: "2-digit",
+    month:  "short",
+    year: "numeric"
+});
+
+todayDate.forEach((el) => {
+    el.innerHTML = formattedDate;
+})
+
+// For Sponcered Website 
+let sponseredWebsite = []; // will store data from JSON
+
+// Fetch data from JSON file
+fetch("./assets/data/sponseredWebsiteData.json")
+    .then((res) => res.json())
+    .then((data) => {
+        sponseredWebsite = data;
+
+        renderSponceredCard(sponseredWebsite.slice(0, 2));
+    })
+    .catch((err) => console.error("Error loading data:", err));
 
 // Function to render cards
-function renderCards(data) {
-    sec2Container.innerHTML = "";
+function renderSponceredCard(data) {
+    sec2SponceredCard.innerHTML = "";
 
     data.forEach((item) => {
-        sec2Container.innerHTML += `
-        <div class="sec2-card">
-            <div class="sec2-up flex-center">
-                <div class="sec2-up-logo">
-                    <img src="${item.image}" alt="Company Logo">
-                </div>
-                
-                    <div class="sec2-up-content">
-                        <div class="sec2-up-name">
-                            <p><b>${item.name}</b></p>
-                        </div>
-                        <a href="${item.url}" target="_blank">
-                        <div class="sec2-up-url">${item.url}</div></a>
-                    </div>
-                
-            </div>
+        sec2SponceredCard.innerHTML += `
+      <div>
+        <div class="sec2-up flex-center">
+          <div class="sec2-up-logo">
+            <img src="${item.logo}" alt="Company Logo">
+          </div>
 
-            <div class="sec2-center">
-                <h3 class="mt-10"><a href="${item.url}" target="_blank"><span>${item.name}</span></a></h3>
-                <p class="mt-10">${item.description}</p>
+          <div class="sec2-up-content">
+            <div class="sec2-up-name">
+              <p><b>${item.name}</b></p>
             </div>
-
-            <div class="sec2-right ml-10">
-                <hr>
-                <p>
-                    <i class="fa-solid fa-phone-volume fa-shake fa-sm mr-10"></i>
-                    <a href="tel:${item.numberCall}">${item.numberDisplay}</a>
-                </p>
-                <hr>
-            </div>
+            <a href="${item.url}" target="_blank">
+              <div class="sec2-up-url">${item.url}</div>
+            </a>
+          </div>
         </div>
-        `;
+
+        <div class="sec2-center">
+          <h3 class="mt-10">
+            <a href="${item.url}" target="_blank"><span>${item.name}</span></a>
+          </h3>
+          <p class="mt-10">${item.desc}</p>
+        </div>
+
+        <div class="sec2-right ml-10">
+          <hr>
+          <p>Call us Now: <a href="tel:${item.numCall}"><span>${item.numDisplay}</span></a></p>
+          <hr>
+          <p>For any Query: <a href="mailto:${item.mail}"><span>${item.mail}</span></a></p>
+          <hr>
+        </div>
+      </div>
+    `;
     });
 }
 
-// Initial render (shows all cards)
-renderCards(website);
+// Show Hide Sponsered 
+const sec2ShowHide = document.querySelector(".sec2-show-hide");
+sec2ShowHide.addEventListener("click", () => {
+    if (sec2SponceredCard.style.display === "none") {
+        // Show
+        sec2SponceredCard.style.display = "block";
+        sec2ShowHide.innerHTML = `<p>Hide Sponsored results &#9650;</p>`;
+    } else {
+        // Hide
+        sec2SponceredCard.style.display = "none";
+        sec2ShowHide.innerHTML = `<p>Show Sponsored results &#9660;</p>`;
+    }
+})
 
-// Search Functionality
-searchInput.addEventListener("keyup", () => {
-    const query = searchInput.value.toLowerCase();
+// sec2 Main Card 
+let mainWebsite = [];
+fetch("./assets/data/mainWebsiteData.json")
+    .then((res) => res.json())
+    .then((data) => {
+        mainWebsite = data;
 
-    const filtered = website.filter((item) =>
-        item.name.toLowerCase().includes(query) ||
-        item.url.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query)
-    );
+        renderMainCards(mainWebsite.slice(0, 2));
+    })
+    .catch((err) => console.error("Error of Main card Render: ", err));
 
-    renderCards(filtered);
-});
+const sec2MainCard = document.querySelector('.sec2-main-card');
+function renderMainCards(data) {
+    sec2MainCard.innerHTML = "";
 
-// Address 
-const address = document.getElementById('address')
+    data.forEach((item) => {
+        sec2MainCard.innerHTML += `
+        <div class="flex mt-10">
+        <div class="main-card-left">
+                        <div class="sec2-up flex-center">
+                            <div class="sec2-up-logo">
+                                <img src="${item.logo}" alt="Company Logo">
+                            </div>
+
+                            <div class="sec2-up-content">
+                                <div class="sec2-up-name">
+                                    <p><b>${item.name}</b></p>
+                                </div>
+                                <a href="${item.url}" target="_blank">
+                                    <div class="sec2-up-url">${item.url}</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="sec2-center">
+                            <h3 class="mt-10"><a href="${item.url}"
+                                    target="_blank"><span>${item.name}</span></a></h3>
+                            <p class="mt-10">${item.desc}</p>
+                        </div>
+
+                        <div class="sec2-right ml-10 flex mt-10">
+                            <div class="sec2-right-card ">
+                                <p><a href="${item.url}"><span>${item.card1}</span></a></p>
+                            </div>
+                            <div class="sec2-right-card">
+                                <p><a href="${item.url}"><span>${item.card2}</span></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-card-right">
+                        <img src="${item.image}" alt="Plane Image">
+                    </div>
+        </div>`
+    })
+}
+
+// Fetch Normal Website Data
+let normalWebsiteData = [];
+
+fetch('./assets/data/normalWebsiteData.json')
+    .then((res) => res.json())
+    .then((data) => {
+        normalWebsiteData = data;
+        renderNormalData(normalWebsiteData.slice(0, 5));
+    })
+    .catch((err) => console.error("Error in fetching normal website data: ", err));
+
+let sec2NormalCard = document.querySelector(".sec2-normal-card");
+function renderNormalData(data) {
+    sec2NormalCard.innerHTML = "";
+
+    data.forEach((item) => {
+        sec2NormalCard.innerHTML += `
+        <div class="mt-20">
+<div class="sec2-up flex-center">
+                        <div class="sec2-up-logo">
+                            <img src="${item.logo}" alt="Company Logo">
+                        </div>
+
+                        <div class="sec2-up-content">
+                            <div class="sec2-up-name">
+                                <p><b>${item.name}</b></p>
+                            </div>
+                            <a href="${item.url}" target="_blank">
+                                <div class="sec2-up-url">${item.url}</div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="sec2-center">
+                        <h3 class="mt-10"><a href="${item.url}"
+                                target="_blank"><span>${item.name}</span></a></h3>
+                        <p class="mt-10">${item.desc}</p>
+                    </div>
+        </div>`
+    })
+}
+
+
+// Footer 
+// Address fetching
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
         async (position) => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-
-            console.log("Latitude:", lat);
-            console.log("Longitude:", lon);
-
-            // Use a reverse geocoding API to get the address
-            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`);
-            const data = await response.json();
-            address.innerHTML = `${data.display_name}`
-            console.log("Address:", data.display_name);
+            const { latitude: lat, longitude: lon } = position.coords;
+            try {
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`
+                );
+                const data = await response.json();
+                address.innerHTML = data.display_name;
+            } catch (err) {
+                console.error("Error fetching address:", err);
+            }
         },
-        (error) => {
-            console.error("Error getting location:", error.message);
-        }
+        (error) => console.error("Geolocation error:", error.message)
     );
-} else {
-    console.error("Geolocation is not supported by this browser.");
 }
