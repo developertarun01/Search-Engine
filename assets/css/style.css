@@ -4,7 +4,7 @@
   --button-light: #1a73e8;
   --button: #1a73e8;
   --button-dark: #1a73e8;
-  --light: #f0f0f0;
+  --light: #c7c7c7;
   --dark: #303030;
 }
 
@@ -85,6 +85,9 @@ img {
 }
 
 hr {
+  border: none; /* remove default border */
+  height: 1px; /* thickness of line */
+  background-color: var(--light); /* your desired color */
   margin: 10px 0;
 }
 
@@ -346,7 +349,7 @@ i {
 }
 
 .sec2-right-card {
-  border: 1px solid var(--dark);
+  border: 1px solid var(--light);
   border-radius: 20px;
   padding: 5px 10px;
 }
