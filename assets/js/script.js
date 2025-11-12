@@ -9,26 +9,26 @@ const resultsFor = document.querySelector('.results-for');
 const allData = [];
 // Search functionality
 searchInput.addEventListener("keyup", () => {
-    const query = searchInput.value.toLowerCase();
-    resultsFor.style.display = "block"
-    resultsFor.innerHTML = `Result for <span>${query}</span>`;
-    navCenterCross.style.display = "block";
+  const query = searchInput.value.toLowerCase();
+  resultsFor.style.display = "block"
+  resultsFor.innerHTML = `Result for <span>${query}</span>`;
+  navCenterCross.style.display = "block";
 
-    const filteredSponsered = sponseredWebsite.filter(
-        (item) =>
-            item.name.toLowerCase().includes(query) ||
-            item.url.toLowerCase().includes(query) ||
-            item.desc.toLowerCase().includes(query)
-    );
+  const filteredSponsered = sponseredWebsite.filter(
+    (item) =>
+      item.name.toLowerCase().includes(query) ||
+      item.url.toLowerCase().includes(query) ||
+      item.desc.toLowerCase().includes(query)
+  );
 
-    // When searching, show only the first two matches
-    renderSponceredCard(filteredSponsered.slice(0, 2));
+  // When searching, show only the first two matches
+  renderSponceredCard(filteredSponsered.slice(0, 2));
 });
 
 navCenterCross.addEventListener("click", () => {
-    searchInput.value = "";
-    resultsFor.style.display = "none"
-    renderSponceredCard(sponseredWebsite.slice(0, 2)); // reset to first two again
+  searchInput.value = "";
+  resultsFor.style.display = "none"
+  renderSponceredCard(sponseredWebsite.slice(0, 2)); // reset to first two again
 });
 
 // Section 2 
@@ -36,13 +36,13 @@ let todayDate = document.querySelectorAll(".today-date");
 
 let currentDate = new Date();
 let formattedDate = currentDate.toLocaleDateString("en-US", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric"
+  day: "2-digit",
+  month: "short",
+  year: "numeric"
 });
 
 todayDate.forEach((el) => {
-    el.innerHTML = formattedDate;
+  el.innerHTML = formattedDate;
 })
 
 // For Sponcered Website 
@@ -50,13 +50,13 @@ let sponseredWebsite = []; // will store data from JSON
 
 // Fetch data from JSON file
 fetch("./assets/data/sponseredWebsiteData.json")
-    .then((res) => res.json())
-    .then((data) => {
-        sponseredWebsite = data;
+  .then((res) => res.json())
+  .then((data) => {
+    sponseredWebsite = data;
 
-        renderSponceredCard(sponseredWebsite.slice(0, 4));
-    })
-    .catch((err) => console.error("Error loading data:", err));
+    renderSponceredCard(sponseredWebsite.slice(0, 4));
+  })
+  .catch((err) => console.error("Error loading data:", err));
 
 // Function to render cards
 function renderSponceredCard(data) {
@@ -77,10 +77,10 @@ function renderSponceredCard(data) {
             </div>
             <div class="sec2-up-content">
               <div class="sec2-up-name">
-                <p><b>${item.name}</b></p>
+                <p>${item.name}</p>
               </div>
               <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
-                <div class="sec2-up-url">${item.url}</div> 
+                <p class="sec2-up-url small">${item.url}</p> 
                 <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
               </a>
             </div>
@@ -94,7 +94,6 @@ function renderSponceredCard(data) {
           <div class="sec2-right ml-10">
             <hr>
             <p>Call us Now: <a href="tel:${item.numCall}"><span>${item.numDisplay}</span></a></p>
-            <hr>
           </div>
         </div>
       `;
@@ -109,10 +108,10 @@ function renderSponceredCard(data) {
             </div>
             <div class="sec2-up-content">
               <div class="sec2-up-name">
-                <p><b>${item.name}</b></p>
+                <p>${item.name}</p>
               </div>
               <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
-                <div class="sec2-up-url">${item.url}</div> 
+                <p class="sec2-up-url small">${item.url}</p> 
                 <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
               </a>
             </div>
@@ -141,34 +140,34 @@ function renderSponceredCard(data) {
 // Show Hide Sponsered 
 const sec2ShowHide = document.querySelector(".sec2-show-hide");
 sec2ShowHide.addEventListener("click", () => {
-    if (sec2SponceredCard.style.display === "none") {
-        // Show
-        sec2SponceredCard.style.display = "block";
-        sec2ShowHide.innerHTML = `<p>Hide Sponsored results &#9650;</p>`;
-    } else {
-        // Hide
-        sec2SponceredCard.style.display = "none";
-        sec2ShowHide.innerHTML = `<p>Show Sponsored results &#9660;</p>`;
-    }
+  if (sec2SponceredCard.style.display === "none") {
+    // Show
+    sec2SponceredCard.style.display = "block";
+    sec2ShowHide.innerHTML = `<p>Hide Sponsored results &#9650;</p>`;
+  } else {
+    // Hide
+    sec2SponceredCard.style.display = "none";
+    sec2ShowHide.innerHTML = `<p>Show Sponsored results &#9660;</p>`;
+  }
 })
 
 // sec2 Main Card 
 let mainWebsite = [];
 fetch("./assets/data/mainWebsiteData.json")
-    .then((res) => res.json())
-    .then((data) => {
-        mainWebsite = data;
+  .then((res) => res.json())
+  .then((data) => {
+    mainWebsite = data;
 
-        renderMainCards(mainWebsite.slice(0, 2));
-    })
-    .catch((err) => console.error("Error of Main card Render: ", err));
+    renderMainCards(mainWebsite.slice(0, 2));
+  })
+  .catch((err) => console.error("Error of Main card Render: ", err));
 
 const sec2MainCard = document.querySelector('.sec2-main-card');
 function renderMainCards(data) {
-    sec2MainCard.innerHTML = "";
+  sec2MainCard.innerHTML = "";
 
-    data.forEach((item) => {
-        sec2MainCard.innerHTML += `
+  data.forEach((item) => {
+    sec2MainCard.innerHTML += `
         <hr class="custom-line">
         <div class="flex mt-10">
         <div class="main-card-left">
@@ -178,14 +177,14 @@ function renderMainCards(data) {
                             </div>
 
                             <div class="sec2-up-content">
-                                <div class="sec2-up-name">
-                                    <p><b>${item.name}</b></p>
-                                </div>
-                                <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
-              <div class="sec2-up-url">${item.url}</div> 
-              <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
-            </a>
-                            </div>
+              <div class="sec2-up-name">
+                <p>${item.name}</p>
+              </div>
+              <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
+                <p class="sec2-up-url small">${item.url}</p> 
+                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+              </a>
+            </div>
 
                         </div>
 
@@ -208,26 +207,26 @@ function renderMainCards(data) {
                         <img src="${item.image}" alt="Plane Image">
                     </div>
         </div>`
-    })
+  })
 }
 
 // Fetch Normal Website Data
 let normalWebsiteData = [];
 
 fetch('./assets/data/normalWebsiteData.json')
-    .then((res) => res.json())
-    .then((data) => {
-        normalWebsiteData = data;
-        renderNormalData(normalWebsiteData.slice(0, 5));
-    })
-    .catch((err) => console.error("Error in fetching normal website data: ", err));
+  .then((res) => res.json())
+  .then((data) => {
+    normalWebsiteData = data;
+    renderNormalData(normalWebsiteData.slice(0, 5));
+  })
+  .catch((err) => console.error("Error in fetching normal website data: ", err));
 
 let sec2NormalCard = document.querySelector(".sec2-normal-card");
 function renderNormalData(data) {
-    sec2NormalCard.innerHTML = "";
+  sec2NormalCard.innerHTML = "";
 
-    data.forEach((item) => {
-        sec2NormalCard.innerHTML += `
+  data.forEach((item) => {
+    sec2NormalCard.innerHTML += `
         <hr class="custom-line">
         <div class="mt-10">
 <div class="sec2-up flex-center">
@@ -236,14 +235,14 @@ function renderNormalData(data) {
                         </div>
 
                         <div class="sec2-up-content">
-                            <div class="sec2-up-name">
-                                <p><b>${item.name}</b></p>
-                            </div>
-                            <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
-              <div class="sec2-up-url">${item.url}</div> 
-              <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
-            </a>
-                        </div>
+              <div class="sec2-up-name">
+                <p>${item.name}</p>
+              </div>
+              <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
+                <p class="sec2-up-url small">${item.url}</p> 
+                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+              </a>
+            </div>
 
                     </div>
 
@@ -253,26 +252,26 @@ function renderNormalData(data) {
                         <p class="mt-10">${item.desc}</p>
                     </div>
         </div>`
-    })
+  })
 }
 
 
 // Footer 
 // Address fetching
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-        async (position) => {
-            const { latitude: lat, longitude: lon } = position.coords;
-            try {
-                const response = await fetch(
-                    `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`
-                );
-                const data = await response.json();
-                address.innerHTML = data.display_name;
-            } catch (err) {
-                console.error("Error fetching address:", err);
-            }
-        },
-        (error) => console.error("Geolocation error:", error.message)
-    );
+  navigator.geolocation.getCurrentPosition(
+    async (position) => {
+      const { latitude: lat, longitude: lon } = position.coords;
+      try {
+        const response = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`
+        );
+        const data = await response.json();
+        address.innerHTML = data.display_name;
+      } catch (err) {
+        console.error("Error fetching address:", err);
+      }
+    },
+    (error) => console.error("Geolocation error:", error.message)
+  );
 }
