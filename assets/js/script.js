@@ -157,3 +157,28 @@ searchInput.addEventListener("keyup", () => {
 
     renderCards(filtered);
 });
+
+// Address 
+const address = document.getElementById('address')
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        async (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            console.log("Latitude:", lat);
+            console.log("Longitude:", lon);
+
+            // Use a reverse geocoding API to get the address
+            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`);
+            const data = await response.json();
+            address.innerHTML = `${data.display_name}`
+            console.log("Address:", data.display_name);
+        },
+        (error) => {
+            console.error("Error getting location:", error.message);
+        }
+    );
+} else {
+    console.error("Geolocation is not supported by this browser.");
+}
