@@ -96,6 +96,45 @@ function renderSponceredCard(data) {
       </div>
     `;
     });
+
+    data.forEach((item) => {
+        sec2SponceredCard.innerHTML += `
+      <div class="mb-10">
+        <div class="sec2-up flex-center">
+          <div class="sec2-up-logo">
+            <img src="${item.logo}" alt="Company Logo">
+          </div>
+
+          <div class="sec2-up-content">
+            <div class="sec2-up-name">
+              <p><b>${item.name}</b></p>
+            </div>
+            <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
+              <div class="sec2-up-url">${item.url}</div> 
+              <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="sec2-center">
+          <h3 class="mt-10">
+            <a href="${item.url}" target="_blank"><span>${item.name}</span></a>
+          </h3>
+          <p class="mt-10">${item.desc}</p>
+        </div>
+
+        <div class="sec2-right-diff mt-10 flex-center">
+                        <div class="sec2-right-diff-left">
+                            <span><i class="fa-solid fa-phone"></i></span>
+                        </div>
+                        <div class="sec2-right-diff-right">
+                            <p><a href="tel:${item.numCall}"><span><b>${item.numDisplay}</b></span></a></p>
+                            <p class="small"><a href="${item.url}">${item.url}</a></p>
+                        </div>
+                    </div>
+      </div>
+    `;
+    });
 }
 
 // Show Hide Sponsered 

@@ -262,6 +262,7 @@ hr {
 
 i {
   color: var(--dark);
+  font-size: 20px;
 }
 
 .nav-center ul li {
@@ -276,10 +277,6 @@ i {
   margin-left: 128px;
   box-shadow: 0 3px 10px var(--dark);
   width: 3250px;
-}
-
-.nav-inner i {
-  font-size: 20px;
 }
 
 .nav-center-cross {
@@ -353,6 +350,14 @@ i {
   border-radius: 20px;
   padding: 5px 10px;
 }
+
+.sec2-right-diff {
+  margin-left: 0;
+  border: 1px solid var(--light);
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
 
 .sec2-show-hide-container {
   width: 100%;
@@ -492,6 +497,10 @@ i {
   }
   .sec2 {
     margin-top: 5px;
+  }
+  
+  .sec2-right-diff {
+    flex-direction: row;
   }
 
   .sec2-up {
