@@ -337,7 +337,7 @@ i {
 
 .sec2-up-logo {
   background-color: var(--background);
-  padding: 8px 8px 4px 8px;
+  padding: 8px 8px 3px 8px;
   border-radius: 50%;
   width: 40px;
 }
@@ -477,8 +477,13 @@ i {
     overflow: hidden;
   }
 
-  .sec1-inner ul li {
-    /* width: 100%; */
+  .sec2-up-content {
+    width: 100%;
+  }
+
+  .sec2-3-dot {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   /* Section 2  */

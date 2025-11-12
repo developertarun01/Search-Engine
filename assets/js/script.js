@@ -37,7 +37,7 @@ let todayDate = document.querySelectorAll(".today-date");
 let currentDate = new Date();
 let formattedDate = currentDate.toLocaleDateString("en-US", {
     day: "2-digit",
-    month:  "short",
+    month: "short",
     year: "numeric"
 });
 
@@ -74,8 +74,9 @@ function renderSponceredCard(data) {
             <div class="sec2-up-name">
               <p><b>${item.name}</b></p>
             </div>
-            <a href="${item.url}" target="_blank">
-              <div class="sec2-up-url">${item.url}</div>
+            <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
+              <div class="sec2-up-url">${item.url}</div> 
+              <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
             </a>
           </div>
         </div>
@@ -139,9 +140,10 @@ function renderMainCards(data) {
                                 <div class="sec2-up-name">
                                     <p><b>${item.name}</b></p>
                                 </div>
-                                <a href="${item.url}" target="_blank">
-                                    <div class="sec2-up-url">${item.url}</div>
-                                </a>
+                                <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
+              <div class="sec2-up-url">${item.url}</div> 
+              <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+            </a>
                             </div>
 
                         </div>
@@ -195,9 +197,10 @@ function renderNormalData(data) {
                             <div class="sec2-up-name">
                                 <p><b>${item.name}</b></p>
                             </div>
-                            <a href="${item.url}" target="_blank">
-                                <div class="sec2-up-url">${item.url}</div>
-                            </a>
+                            <a class="flex sec2-3-dot" href="${item.url}" target="_blank">
+              <div class="sec2-up-url">${item.url}</div> 
+              <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
+            </a>
                         </div>
 
                     </div>
