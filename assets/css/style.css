@@ -374,6 +374,11 @@ i {
   body {
     font-size: 14px;
   }
+
+  summary {
+    font-size: 14px;
+  }
+
   .container {
     padding: 20px 10px;
   }
@@ -399,10 +404,6 @@ i {
 
   .hamburger-open {
     display: block;
-  }
-
-  summary {
-    font-size: 15px;
   }
 
   /* Navbar  */
